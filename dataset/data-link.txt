@@ -1,0 +1,7 @@
+================================================================================
+1)
+Download "https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow" and put 
+it in "dataset/original-aauRainSnow-dataset/":
+
+https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow
+================================================================================
