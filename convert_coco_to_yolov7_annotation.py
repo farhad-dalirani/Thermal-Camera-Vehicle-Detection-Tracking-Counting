@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # Dictionary to convert classes from orginal dataset to yolov7 format dataset
     dic_org_new_class = {}
     for idx, cat_i in enumerate(unique_classes_with_name):
-        dic_org_new_class[cat_i[0]] = idx + 1
+        dic_org_new_class[cat_i[0]] = idx
     print('> Class mapping from coco to yolo:', dic_org_new_class)    
     
     # Iterate bounding boxes in coco version one by one
