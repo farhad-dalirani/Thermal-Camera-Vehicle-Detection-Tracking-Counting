@@ -52,26 +52,22 @@ if __name__ == '__main__':
     # Train, validation and test sequences
     splits = {
                 'train': [
-                            'Egensevej-1', 'Egensevej-2', 'Egensevej-3',
-                            'Hadsundvej-1', 'Hadsundvej-2',
-                            'Hasserisvej-1',
-                            'Hjorringvej-1', 'Hjorringvej-2',
+                            'Egensevej-1', 'Egensevej-2', 'Egensevej-3', 'Egensevej-4', 
+                            'Hadsundvej-1', 
+                            'Hasserisvej-1', 'Hasserisvej-2', 
+                            'Hjorringvej-1', 'Hjorringvej-2', 'Hjorringvej-3', 
                             'Hobrovej-1',
-                            'Ostre-1', 'Ostre-2',
-                            'Ringvej-1'
+                            'Ostre-1', 'Ostre-2', 'Ostre-3', 
+                            'Ringvej-1', 'Ringvej-2', 
                          ],
                 'valid': [
-                            'Egensevej-4',
-                            'Hasserisvej-2',
-                            'Hjorringvej-3',
-                            'Ostre-3',
-                            'Ringvej-2'
-                        ], 
-                'test': [
                             'Egensevej-5',
                             'Hasserisvej-3',
+                            'Ostre-4'
+                        ], 
+                'test': [
+                            'Hadsundvej-2',
                             'Hjorringvej-4',
-                            'Ostre-4',
                             'Ringvej-3'
                         ]
             }
