@@ -51,9 +51,29 @@ if __name__ == '__main__':
 
     # Train, validation and test sequences
     splits = {
-                'train': ['Egensevej','Hadsundvej','Hasserisvej','Hjorringvej','Hobrovej'],
-                'valid': ['Ostre'], 
-                'test': ['Ringvej']
+                'train': [
+                            'Egensevej-1', 'Egensevej-2', 'Egensevej-3',
+                            'Hadsundvej-1', 'Hadsundvej-2',
+                            'Hasserisvej-1',
+                            'Hjorringvej-1', 'Hjorringvej-2',
+                            'Hobrovej-1',
+                            'Ostre-1', 'Ostre-2',
+                            'Ringvej-1'
+                         ],
+                'valid': [
+                            'Egensevej-4',
+                            'Hasserisvej-2',
+                            'Hjorringvej-3',
+                            'Ostre-3',
+                            'Ringvej-2'
+                        ], 
+                'test': [
+                            'Egensevej-5',
+                            'Hasserisvej-3',
+                            'Hjorringvej-4',
+                            'Ostre-4',
+                            'Ringvej-3'
+                        ]
             }
 
     # path of orginal aauRainSnow-dataset
@@ -151,15 +171,16 @@ if __name__ == '__main__':
         img_i = cv.imread(os.path.join('dataset/original-aauRainSnow-dataset', img_i_path)) 
         # Read image mask
         seq_name = img_i_path.split('/')[0]
+        seq_sub_name = img_i_path.split('/')[1]
         img_name = img_i_path.split('/')[-1].split('.')[0]
         
-        img_mask_i = cv.imread(os.path.join('dataset/original-aauRainSnow-dataset', seq_name, '{}-1-mask-thermal.png'.format(seq_name)))     
+        img_mask_i = cv.imread(os.path.join('dataset/original-aauRainSnow-dataset', seq_name, '{}-mask-thermal.png'.format(seq_sub_name)))     
         # Mask image to remove not annotated area inside thermal camera images
         img_i[img_mask_i == 0] = 0
 
         # Determine write image and its annotation in train/validation or test
         for split_i in splits:
-            if seq_name in splits[split_i]:                
+            if seq_sub_name in splits[split_i]:                
                 # Write image
                 cv.imwrite(os.path.join('dataset/yolov7-aauRainSnow-dataset', split_i, 'images', '{}.png'.format(img_id_i)), img_i)
                 # Write bounding boxes
