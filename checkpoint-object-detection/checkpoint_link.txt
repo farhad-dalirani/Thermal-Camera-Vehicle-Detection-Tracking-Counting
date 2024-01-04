@@ -1,0 +1,2 @@
+Download the check point for the yolo-nas fine-tuned on thermal images of 'aauRainSnow' dataset here:
+https://drive.google.com/file/d/1PqwAqZHxegf7WEVDu51jngfX3r7BMygn/view?usp=sharing
