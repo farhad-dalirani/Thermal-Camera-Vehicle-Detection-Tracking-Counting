@@ -9,7 +9,7 @@ if __name__ == '__main__':
         path_config = json.load(file)
     
     # Open the config file
-    with open(path_config['config_file_path'], 'r') as file:
+    with open(path_config['config_file_path_tracking'], 'r') as file:
         dic_config = json.load(file)
 
     # Tracking by detection

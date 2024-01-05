@@ -15,10 +15,6 @@ inputs
 │   └── cam2.mp4
 ├── Hjorringvej-1
 │   └── cam2.mp4
-├── Hobrovej-1
-│   └── cam2.mp4
-├── Ostre-1
-│   └── cam2.mp4
 └── Ringvej-1
     └── cam2.mp4
 

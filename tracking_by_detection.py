@@ -88,7 +88,7 @@ def tracking_by_detection(config):
             
             if label_i not in config['objects_of_interest_labels']:
                 continue
-
+            
             # Two decimal confidence, for better visualization
             conf_i = round(conf_i, 2)
             
@@ -101,6 +101,14 @@ def tracking_by_detection(config):
             # Width and Height of bounding box
             bbox_i_width, bbox_i_height = abs(x_ul-x_br), abs(y_ul-y_br)
             
+            # if bounding box is larger than specified limit in config file, ignore it
+            if config['object_max_width'] is not None: 
+                if bbox_i_width > (config['object_max_width'] * img_width):
+                    continue
+            if config['object_max_height'] is not None: 
+                if bbox_i_height > (config['object_max_height'] * img_height):
+                    continue
+
             all_boxes.append([x_c, y_c, bbox_i_width, bbox_i_height])
             all_labels.append(int(label_i))
             all_confidences.append(conf_i)
