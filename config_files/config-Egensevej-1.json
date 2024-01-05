@@ -1,0 +1,20 @@
+{
+    "__Input image/video directory__": null,
+    "input_type": "video",
+    "images_folder": null,
+    "input_video_path": "inputs/Egensevej-1/cam2.mp4",
+    "output_folder": "./output_videos",
+
+    "__Yolo NAS Configuration__": null,
+    "detector_arch": "yolo_nas_m",
+    "check_point_path": "checkpoint-object-detection/ckpt_best.pth",
+    "number_of_classes": 6,
+    "objects_of_interest_labels": [0, 1, 2, 3, 4, 5],
+    "detector_minimum_confidence": 0.4,
+    "detector_device": "cuda:0",
+
+    "__Sort Tracker Configuration__": null,
+    "max_age": 5,
+    "min_hits": 3, 
+    "iou_threshold": 0.2
+}

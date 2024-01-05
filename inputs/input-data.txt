@@ -1,0 +1,24 @@
+1) Download "https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow" and put 
+   it in "dataset/original-aauRainSnow-dataset/":
+    https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow
+2) Put thermal camera videos (cam2.mkv) from different sequences of the dataset in "inputs" folder
+3) Convert mkv videos to mp4 with any method that comfortable, for example:
+    ffmpeg -i my_mkv.mkv -codec copy my_mkv.mp4
+4) The file in "inputs" folder will be like this:
+
+inputs
+├── Egensevej-1
+│   └── cam2.mp4
+├── Hadsundvej-1
+│   └── cam2.mp4
+├── Hasserisvej-1
+│   └── cam2.mp4
+├── Hjorringvej-1
+│   └── cam2.mp4
+├── Hobrovej-1
+│   └── cam2.mp4
+├── Ostre-1
+│   └── cam2.mp4
+└── Ringvej-1
+    └── cam2.mp4
+
