@@ -4,4 +4,19 @@ Download "https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow" and pu
 it in "dataset/original-aauRainSnow-dataset/":
 
 https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow
+
+After, it will look like this:
+├── original-aauRainSnow-dataset
+│   ├── aauRainSnow-rgb.json
+│   ├── aauRainSnow-thermal.json
+│   ├── aauRainSnowUtility.py
+│   ├── Egensevej
+│   ├── Hadsundvej
+│   ├── Hasserisvej
+│   ├── Hjorringvej
+│   ├── Hobrovej
+│   ├── Ostre
+│   ├── Ringvej
+│   ├── splitVideoToFrames.bat
+│   └── Visualize AAU RainSnow annotations.ipynb
 ================================================================================
