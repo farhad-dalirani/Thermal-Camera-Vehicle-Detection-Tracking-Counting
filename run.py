@@ -1,5 +1,5 @@
 import json
-from tracking_by_detection import tracking_by_detection
+from tracking_counting import tracking_counting
 
 if __name__ == '__main__':
     
@@ -9,8 +9,8 @@ if __name__ == '__main__':
         path_config = json.load(file)
     
     # Open the config file
-    with open(path_config['config_file_path_tracking'], 'r') as file:
+    with open(path_config['config_file_path'], 'r') as file:
         dic_config = json.load(file)
 
     # Tracking by detection
-    tracking_by_detection(config=dic_config)
+    tracking_counting(config=dic_config)

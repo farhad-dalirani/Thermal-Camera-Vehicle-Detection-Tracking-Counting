@@ -3,7 +3,7 @@ import torch
 import numpy as np
 import cv2 as cv
 from super_gradients.training import models
-from drawing_util import DrawingTrackingInfo
+from drawing_util import DrawingTrackingInfo, DrawingCountingInfo
 import sort
 from data_util import ReadData
 from datetime import datetime
@@ -18,7 +18,7 @@ def generator_corners_img(img_w, img_h):
         i = (i+1) % 4
         yield corners[i]
 
-def tracking_by_detection(config):
+def tracking_counting(config):
 
     # Check if the output folder exists
     if not os.path.exists(config['output_folder']):
@@ -48,7 +48,11 @@ def tracking_by_detection(config):
                     checkpoint_path=config['check_point_path'])
 
     # Tracking info drawing object
-    draw_obj = DrawingTrackingInfo()
+    draw_track_info_obj = DrawingTrackingInfo()
+    if config['polygons'] is not None:
+        draw_counting_info_obj = DrawingCountingInfo(regions=config['polygons'])
+    else:
+        draw_counting_info_obj = None
 
     # Initialize  SORT with details for tracking in specified config file
     tracker = sort.SORT(
@@ -128,11 +132,20 @@ def tracking_by_detection(config):
             tracker.run(all_boxes, 1)
             outputs = []
 
-        # Draw tracking information on frame
         if len(outputs) > 0:
             bboxes_xyxy = outputs[:, 1:5]
             tracks_id = outputs[:, 0] 
-            img_i_tracking_info = draw_obj.draw_tracking_info(image=img_i, bounding_boxes=bboxes_xyxy, tracking_ids=tracks_id)
+        else:
+            bboxes_xyxy = None
+            tracks_id = None
+
+        # Draw counting information
+        if draw_counting_info_obj is not None:
+            img_i = draw_counting_info_obj.draw_counting_info(image=img_i, bounding_boxes=bboxes_xyxy, tracking_ids=tracks_id)
+
+        # Draw tracking information on frame
+        if len(outputs) > 0:
+            img_i_tracking_info = draw_track_info_obj.draw_tracking_info(image=img_i, bounding_boxes=bboxes_xyxy, tracking_ids=tracks_id)
         else:
             img_i_tracking_info = img_i 
 

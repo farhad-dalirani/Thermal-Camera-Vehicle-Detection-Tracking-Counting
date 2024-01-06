@@ -18,5 +18,8 @@
     "__Sort Tracker Configuration__": null,
     "max_age": 5,
     "min_hits": 3, 
-    "iou_threshold": 0.2
+    "iou_threshold": 0.2,
+
+    "__Regions in polygon form (clockwise or anti-clockwise order)__": null,
+    "polygons": null
 }
