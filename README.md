@@ -51,4 +51,4 @@ Feel free to create similar configuration files with different hyperparameters f
 ## Demo
 [![Watch the demo]](readme-files/demo.webm)
 
-[![Watch the video](readme-files/4.png)](readme-files/demo.webm)
+[![Watch the video](readme-files/5.png)](readme-files/demo.webm)
