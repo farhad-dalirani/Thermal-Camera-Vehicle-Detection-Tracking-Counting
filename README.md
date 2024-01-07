@@ -1,12 +1,12 @@
 # Traffic Flow Monitoring with Thermal Camera: Vehicle Detection, Tracking, and Counting
 
 <p align="center">
-  <img width="300" src="readme-files/1.png" alt="Vehicle Detection in Thermal camera">
-  <img width="300" src="readme-files/3.png" alt="Vehicle Tracking in Thermal camera">
+  <img width="320" src="readme-files/1.png" alt="Vehicle Detection in Thermal camera">
+  <img width="320" src="readme-files/3.png" alt="Vehicle Tracking in Thermal camera">
 </p>
 <p align="center">
-  <img width="300" src="readme-files/4.png" alt="Unique Vehicle Counting in Thermal camera">
-  <img width="300" src="readme-files/2.png" alt="Unique Vehicle Counting in Thermal camera">
+  <img width="320" src="readme-files/4.png" alt="Unique Vehicle Counting in Thermal camera">
+  <img width="320" src="readme-files/2.png" alt="Unique Vehicle Counting in Thermal camera">
 </p>
 
 
