@@ -58,6 +58,7 @@ class DrawingCountingInfo:
     def __init__(self, regions):
         self.max_color = 10
         self.regions_colors = np.random.randint(low=0, high=255, size=(self.max_color, 3), dtype='uint8')
+        # Keep record of unique id tracks that entered each region
         self.regions_count = {i:set() for i in range(len(regions))}
         
         # if polygons for counting objects are defined, convert

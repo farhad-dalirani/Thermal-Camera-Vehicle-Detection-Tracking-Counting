@@ -12,5 +12,5 @@ if __name__ == '__main__':
     with open(path_config['config_file_path'], 'r') as file:
         dic_config = json.load(file)
 
-    # Tracking by detection
+    # Tracking by detection and object coundting in the specfied regions
     tracking_counting(config=dic_config)
