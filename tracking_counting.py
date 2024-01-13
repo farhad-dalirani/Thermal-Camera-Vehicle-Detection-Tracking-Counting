@@ -8,15 +8,6 @@ import sort
 from data_util import ReadData
 from datetime import datetime
 
-def generator_corners_img(img_w, img_h):
-    """
-    Generates corner coordinates for a image periodically.
-    """
-    i = -1
-    corners = [[0, 0, 2, 2], [0, img_w-1, 2, 2], [img_h-1, img_w-1, 2, 2], [img_h-1, 0, 2, 2]]
-    while True:
-        i = (i+1) % 4
-        yield corners[i]
 
 def tracking_counting(config):
 
@@ -76,7 +67,6 @@ def tracking_counting(config):
             img_width, img_height = img_i.shape[1], img_i.shape[0] 
             time_str = datetime.now().strftime("%H:%M:%S")
             output_video_writer = cv.VideoWriter(os.path.join(config['output_folder'], 'output_video_{}.avi'.format(time_str)), cv.VideoWriter_fourcc('M', 'J', 'P', 'G'), 12, (img_width, img_height))
-            corner_gen = generator_corners_img(img_width, img_height)
 
         # Predict bounding boxes and their label and condidence score
         output_detector = detector.predict(img_i, conf=config['detector_minimum_confidence']) 
@@ -126,10 +116,10 @@ def tracking_counting(config):
             tracker.run(all_boxes, 1)
             outputs = tracker.get_tracks(2)
         else:
-            # a dumpy bounding box for cases that a frame 
+            # an empty bounding box for cases that a frame 
             # does not have any object to stop tracker from crashing
-            all_boxes = np.array([next(corner_gen)])
-            tracker.run(all_boxes, 1)
+            # and perfom proper aging of tracks
+            tracker.run(np.empty(shape=[0, 4]), 1)
             outputs = []
 
         if len(outputs) > 0:
