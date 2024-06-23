@@ -14,7 +14,7 @@
 This project aims to detect various types of vehicles using thermal cameras installed as surveillance sensors in streets. It employs a tracking-by-detection scheme to track the detected objects and subsequently counts the number of unique objects passing through each user-defined polygon.
 
 ### Object Detection
-For object detection, we utilized `YOLO-NAS` fine-tuned on the `aauRainSnow` dataset. Codes for generating the appropriate YOLO annotations from the dataset and training the object detector are included. Additionally, the trained weights are also provided.
+For object detection, we utilized `YOLO-NAS` fine-tuned on the `aauRainSnow` dataset ([[Download Link](https://www.kaggle.com/datasets/aalborguniversity/aau-rainsnow)][[License Link](https://creativecommons.org/licenses/by/4.0/)]). Codes for generating the appropriate YOLO annotations from the dataset and training the object detector are included. Additionally, the trained weights are also provided.
 
 ### Multi-Object Tracking
 For multi-object tracking, we utilize `SORT` (Simple, Online, and Real-time Tracking of multiple objects), which has demonstrated promising results in this task.
